@@ -1,0 +1,105 @@
+{
+ "ablation_no_deskew_holdout_acc_float": 0.9646,
+ "ablation_rule": "identical pipeline on non-deskewed pooled pixels, same 45000 rows, same k, selected mult; not emitted",
+ "batch_id": "B2",
+ "candidate_id": "C2",
+ "decision_id": "D2",
+ "deskew": {
+  "alpha": "cov(r,c)/var(r), 0 if var<=1e-6, clipped to [-1,1]",
+  "centre": 14,
+  "empty_image": "m<=1e-6 returned unchanged",
+  "sampling": "bilinear, 2-pixel zero pad, clipped floor indices, zero fill",
+  "shared_text": "identical source exec'd in build and embedded in classifier"
+ },
+ "deskew_bytes": 1031,
+ "deskew_share_of_source": 0.037282,
+ "direction_id": "QUAD-PCA",
+ "dtypes": {
+  "P": "int8 per-column float32 scale",
+  "W": "int8 per-class float32 scale",
+  "bias": "float32 (W bias row kept unquantized)",
+  "mean": "float32",
+  "whiten": "float32"
+ },
+ "feature_dims_including_bias": 861,
+ "features": "float32/255 -> moment deskew -> 2x2 mean pool (196) -> centred, int8 PCA projection, whitened -> [1, z, z_i*z_j i<=j]",
+ "final_holdout_acc_float_in_sample": 0.9796,
+ "final_holdout_acc_quant_in_sample": 0.9794,
+ "final_lam_50k": 6.242942399760666,
+ "fit_rows": {
+  "final_ridge": 50000,
+  "internal_holdout": 5000,
+  "projection_and_selection": 45000,
+  "total": 50000
+ },
+ "holdout_acc_float_selection": 0.9776,
+ "holdout_acc_int8_selection": 0.9768,
+ "holdout_acc_quant_selection": 0.9768,
+ "holdout_seed": 0,
+ "in_build_timing_descriptive": {
+  "deskew_median_ms": 0.0314,
+  "feature_build_seconds": 2.06,
+  "n": 500,
+  "note": "Runner in-process timing; excludes IPC; no fallback depends on it",
+  "predict_median_ms": 0.04241,
+  "warmup": 20
+ },
+ "k": 40,
+ "k40_source_bytes": 27654,
+ "k_requested": 40,
+ "lam_grid_mults": [
+  0.1,
+  1.0,
+  10.0,
+  100.0,
+  1000.0
+ ],
+ "lam_grid_rule": "mult * trace(G)/d/1000, bias row unpenalised, first max wins",
+ "lam_table_45k": [
+  {
+   "holdout_acc_float": 0.9776,
+   "lam": 5.61916464,
+   "mult": 0.1
+  },
+  {
+   "holdout_acc_float": 0.9774,
+   "lam": 56.19164645,
+   "mult": 1.0
+  },
+  {
+   "holdout_acc_float": 0.9768,
+   "lam": 561.91646447,
+   "mult": 10.0
+  },
+  {
+   "holdout_acc_float": 0.9738,
+   "lam": 5619.1646447,
+   "mult": 100.0
+  },
+  {
+   "holdout_acc_float": 0.9676,
+   "lam": 56191.64644701,
+   "mult": 1000.0
+  }
+ ],
+ "mean_and_P_source": "fit on 45000 train rows; not refit on 50000",
+ "numpy_version": "2.3.5",
+ "parents": [
+  "C1"
+ ],
+ "projection_quantized_before_fit": true,
+ "quant_tolerance_pp": 0.3,
+ "selected_lam_45k": 5.61916464470074,
+ "selected_mult": 0.1,
+ "self_check": {
+  "exact": true,
+  "feature_bit_exact_n": 20,
+  "matches": 200,
+  "n": 200
+ },
+ "size_guard_triggered": false,
+ "source_bytes": 27654,
+ "source_sha256": "4a718c35621e3c76a170a6447a765e87f39b4c53438e76ddb1a3134b23418a8d",
+ "template_support": "not applicable; no exemplars or templates stored",
+ "whitened": true
+}

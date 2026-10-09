@@ -1,0 +1,8 @@
+configuration,coordinates,head_features,correct,errors,accuracy_pct,raw_parameter_payload_bytes
+20 coordinates · quadratic,20,230,9594,406,95.94,14104
+40 coordinates · quadratic,40,860,9782,218,97.82,43384
+60 coordinates · quadratic,60,1890,9792,208,97.92,88664
+40 coordinates · linear,40,40,8935,1065,89.35,10584
+40 coordinates · float32 projection/head,40,860,9782,218,97.82,66744
+Frozen C2 · int8 projection/head,40,860,9783,217,97.83,17624
+Frozen C2 · quadratic terms removed,40,40,4386,5614,43.86,

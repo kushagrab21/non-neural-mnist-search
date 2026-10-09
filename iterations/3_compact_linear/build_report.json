@@ -1,0 +1,148 @@
+{
+ "ablation_no_deskew_holdout_acc_float": 0.8474,
+ "ablation_rule": "identical base pipeline on non-deskewed pooled pixels, same 45000 rows, base selected mult; not emitted",
+ "base_holdout_acc_float_selection": 0.9076,
+ "batch_id": "B3",
+ "candidate_id": "C3",
+ "decision_id": "D3",
+ "deskew": {
+  "alpha": "cov(r,c)/var(r), 0 if var<=1e-6, clipped to [-1,1]",
+  "centre": 14,
+  "empty_image": "m<=1e-6 returned unchanged",
+  "sampling": "bilinear, 2-pixel zero pad, clipped floor indices [0,30], zero fill"
+ },
+ "deskew_bytes": 1031,
+ "deskew_share_of_source": 0.229417,
+ "deskew_text_origin": "byte-for-byte copy of C2 DESKEW_SRC (historical reference, not a parent)",
+ "direction_id": "COMPACT-LINEAR",
+ "dtypes": {
+  "W": "int8 per-class float32 scale",
+  "bias": "float32 (W bias row kept unquantized)"
+ },
+ "feature_dims_including_bias": 197,
+ "final_holdout_acc_float_in_sample": 0.9084,
+ "final_holdout_acc_quant_in_sample": 0.9084,
+ "final_lam_50k": 0.047037088396551914,
+ "fit_rows": {
+  "final_ridge": 50000,
+  "internal_holdout": 5000,
+  "selection_train": 45000,
+  "total": 50000
+ },
+ "holdout_acc_float_selection": 0.9076,
+ "holdout_acc_int8_selection": 0.9066,
+ "holdout_acc_quant_selection": 0.9066,
+ "holdout_seed": 0,
+ "in_build_timing_descriptive": {
+  "deskew_median_ms": 0.03007,
+  "feature_build_seconds": 2.168,
+  "n": 500,
+  "note": "Runner in-process timing; excludes IPC; no fallback depends on it",
+  "predict_median_ms": 0.03868,
+  "warmup": 20
+ },
+ "lam_grid_mults": [
+  0.01,
+  0.1,
+  1.0,
+  10.0,
+  100.0,
+  1000.0
+ ],
+ "lam_grid_rule": "mult * trace(G)/d/1000, bias row unpenalised, first max wins",
+ "lam_table_base_45k": [
+  {
+   "holdout_acc_float": 0.9076,
+   "lam": 0.0423533,
+   "mult": 0.01
+  },
+  {
+   "holdout_acc_float": 0.9076,
+   "lam": 0.42353296,
+   "mult": 0.1
+  },
+  {
+   "holdout_acc_float": 0.9074,
+   "lam": 4.23532958,
+   "mult": 1.0
+  },
+  {
+   "holdout_acc_float": 0.907,
+   "lam": 42.35329582,
+   "mult": 10.0
+  },
+  {
+   "holdout_acc_float": 0.9072,
+   "lam": 423.53295817,
+   "mult": 100.0
+  },
+  {
+   "holdout_acc_float": 0.8968,
+   "lam": 4235.32958168,
+   "mult": 1000.0
+  }
+ ],
+ "lam_table_profile_45k": [
+  {
+   "holdout_acc_float": 0.9092,
+   "lam": 0.03676007,
+   "mult": 0.01
+  },
+  {
+   "holdout_acc_float": 0.9094,
+   "lam": 0.36760075,
+   "mult": 0.1
+  },
+  {
+   "holdout_acc_float": 0.9104,
+   "lam": 3.67600748,
+   "mult": 1.0
+  },
+  {
+   "holdout_acc_float": 0.91,
+   "lam": 36.76007475,
+   "mult": 10.0
+  },
+  {
+   "holdout_acc_float": 0.9078,
+   "lam": 367.60074751,
+   "mult": 100.0
+  },
+  {
+   "holdout_acc_float": 0.8982,
+   "lam": 3676.00747508,
+   "mult": 1000.0
+  }
+ ],
+ "numpy_version": "2.3.5",
+ "parents": [],
+ "profile_gate": {
+  "adopted": false,
+  "gain_float": 0.0028,
+  "gain_ok": false,
+  "required_gain": 0.005,
+  "size_ok": true
+ },
+ "profile_holdout_acc_float_selection": 0.9104,
+ "quant_tolerance_pp": 0.3,
+ "selected_lam_45k": 0.042353295816847776,
+ "selected_mult": 0.01,
+ "selected_mult_base": 0.01,
+ "selected_mult_profile": 1.0,
+ "self_check": {
+  "exact": true,
+  "feature_bit_exact_n": 20,
+  "matches": 200,
+  "n": 200
+ },
+ "size_target_bytes": 6500,
+ "size_target_met": true,
+ "source_bytes": 4494,
+ "source_sha256": "dab9b5697cecf0e4029e56bc8e9103e1a49f9f2d1d94915d736c8724a2133e90",
+ "template_support": "not applicable; no exemplars, templates or means stored",
+ "variant_emitted": "base_196",
+ "variant_source_bytes": {
+  "base_196": 4494,
+  "profile_252": 5711
+ }
+}

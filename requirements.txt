@@ -1,0 +1,3 @@
+numpy==2.3.5
+# only needed for baseline_cnn/
+torch==2.14.1

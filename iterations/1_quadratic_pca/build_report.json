@@ -1,0 +1,82 @@
+{
+ "batch_id": "B1",
+ "candidate_id": "C1",
+ "decision_id": "D1",
+ "direction_id": "QUAD-PCA",
+ "dtypes": {
+  "P": "int8 per-column float32 scale",
+  "W": "int8 per-class float32 scale",
+  "bias": "float32 (W bias row kept unquantized)",
+  "mean": "float32",
+  "whiten": "float32"
+ },
+ "feature_dims_including_bias": 861,
+ "features": "2x2 mean-pooled float32/255 (196) -> centred, int8 PCA projection, whitened -> [1, z, z_i*z_j i<=j]",
+ "final_holdout_acc_float_in_sample": 0.9686,
+ "final_holdout_acc_quant_in_sample": 0.969,
+ "final_lam_50k": 57.96975346858826,
+ "fit_rows": {
+  "final_ridge": 50000,
+  "internal_holdout": 5000,
+  "projection_and_selection": 45000,
+  "total": 50000
+ },
+ "holdout_acc_float_selection": 0.9648,
+ "holdout_acc_int8_selection": 0.9644,
+ "holdout_acc_quant_selection": 0.9644,
+ "holdout_seed": 0,
+ "k": 40,
+ "k40_source_bytes": 26741,
+ "k_requested": 40,
+ "lam_grid_mults": [
+  0.1,
+  1.0,
+  10.0,
+  100.0,
+  1000.0
+ ],
+ "lam_grid_rule": "mult * trace(G)/d/1000, bias row unpenalised, first max wins",
+ "lam_table_45k": [
+  {
+   "holdout_acc_float": 0.9646,
+   "lam": 5.21510828,
+   "mult": 0.1
+  },
+  {
+   "holdout_acc_float": 0.9648,
+   "lam": 52.15108282,
+   "mult": 1.0
+  },
+  {
+   "holdout_acc_float": 0.9636,
+   "lam": 521.51082817,
+   "mult": 10.0
+  },
+  {
+   "holdout_acc_float": 0.9592,
+   "lam": 5215.10828171,
+   "mult": 100.0
+  },
+  {
+   "holdout_acc_float": 0.9472,
+   "lam": 52151.08281709,
+   "mult": 1000.0
+  }
+ ],
+ "mean_and_P_source": "fit on 45000 train rows; not refit on 50000",
+ "numpy_version": "2.3.5",
+ "projection_quantized_before_fit": true,
+ "quant_tolerance_pp": 0.3,
+ "selected_lam_45k": 52.15108281708562,
+ "selected_mult": 1.0,
+ "self_check": {
+  "exact": true,
+  "matches": 200,
+  "n": 200
+ },
+ "size_guard_triggered": false,
+ "source_bytes": 26741,
+ "source_sha256": "e711b68aee97e584796c8059ea39713ce1ed49fbcdbed1bbe7a8707d6fac1390",
+ "template_support": "not applicable; no exemplars or templates stored",
+ "whitened": true
+}
